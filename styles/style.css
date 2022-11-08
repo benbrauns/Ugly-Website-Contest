@@ -1,0 +1,256 @@
+html {
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url("../images/pokeballs_falling.gif");
+    color: #FFCB05;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 0px;
+}
+
+main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    font-family: 'Pokemon Solid', sans-serif;
+    text-shadow: 2px 2px #e4000f;
+    background-color: #ff70ed;
+    width: 100%;
+    height: 50px;
+    padding: 5px 5px 20px 5px;
+}
+
+.nav_button_holder {
+    border-style: ridge;
+    border-color: #e4000f;
+    border-width: 5px;
+    box-shadow: 2px 1px 1px 1px #e4000f;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 5px;
+    border-radius: 10%;
+    width: 100px;
+    background-color: #FFCB05;
+    height: 100%;
+    text-align: center;
+}
+
+.nav_button_holder:hover {
+    filter: invert(1);
+    background-color: #e4000f;
+}
+
+.nav_button {
+    display: block;
+    line-height: 50px;
+    text-decoration: none;
+    color: #fd43e6;
+    width: 100%;
+    height: 100%;
+}
+.nav_button:visited {
+
+}
+.nav_button:hover {
+
+}
+.nav_button:active {
+
+}
+
+.falling {
+    /* animation-duration: 3s, 0.25s;
+    animation-name: falling, invert;
+    animation-timing-function: linear; */
+    animation: falling 3s linear, invert 0.5s linear infinite, rotation 0.5s linear infinite;
+}
+
+.home_collage_image {
+    max-height: 250px;
+    max-width: 150px;
+}
+
+.text_block {
+    font-family: 'Pokemon Hollow', sans-serif;
+    text-shadow: 2px 2px #e4000f;
+}
+
+.glasses_puff {
+    width: 100px;
+    object-fit: fill;
+}
+
+.glasses_puff_spacer_bar_image {
+    height: 100px;
+    width: 100px;
+    background-image: url("../images/singing_puff.gif" );
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: bottom -30px right -55px;
+    animation: fastEndRotation 2s infinite linear;
+}
+
+.image_spacer_bar {
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    height: 100px;
+}
+
+.navbar_image_holder {
+    display: flex;
+    width: 100%;
+}
+
+
+.pokeball_idle_image {
+    animation: stretchBounce 0.6s infinite linear;
+}
+
+#pokeball_bounce_navbar_image {
+    width: 70px;
+    height: 100%;
+    background-image: url("../images/pokeball_bounce.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: bottom -10px right -20px;
+    animation: spin 0.5s linear infinite;
+}
+
+#glasses_puff_navbar_image {
+    width: 70px;
+    height: 100%;
+    background-image: url("../images/glasses_puff.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: bottom -25px right -25px;
+    animation-duration: 0.75s, 1.25s;
+    animation-name: rotation, invert;
+    animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+    from {
+        top: -100px;
+    }
+    to {
+        top: calc(100vh + 100px);
+    }
+}
+
+@keyframes stretchBounce {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.5, 0.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes invert {
+    from {
+        filter: invert(0);
+    } 
+    to {
+        filter: invert(1);
+    }
+}
+
+@keyframes fastEndRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+    transform: rotateZ(0);
+    }
+    25% {
+    transform: rotateZ(-30deg);
+    }
+    50% {
+    transform: rotateZ(270deg);
+    }
+    75% {
+    transform: rotateZ(180deg);
+    }
+    100% {
+    transform: rotateZ(360deg);
+    }
+}
+
+#home_manifesto_holder {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#home_manifesto_text {
+    width: 50%;
+}
+#navbar_left_image_holder {
+    justify-content: end;
+}
+
+#navbar_right_image_holder {
+    justify-content: start;
+}
+
+#home_top_gif {
+    width: 100%;
+    max-width: 1500px;
+}
+
+#navbar_links_holder {
+    display: flex;
+    justify-content: center;
+    background-color: #ff70ed;
+}
+
+#navbar_outer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#outer_manifesto_holder {
+    /* height: 100%;
+    background-image: url("../images/pokemon_stadium.png");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
