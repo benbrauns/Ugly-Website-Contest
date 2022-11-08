@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //addFlashImagesToNavBar();
 });
 
-var maxBalls = 50;
+var maxBalls = 1000;
 const balls = [];
 
 function addFlashImagesToNavBar() {
