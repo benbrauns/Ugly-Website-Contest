@@ -1,5 +1,5 @@
 
-var maxBalls = 1000;
+var maxBalls = 50;
 var balls = [];
 var messages = [
     "Hi",
@@ -10,9 +10,11 @@ var messages = [
     "I dream about your downfall",
     "Puff is not an eldritch deity ",
     "Puff and cthulu are definitely not friends",
+    "I see you",
+    ""
 ]
 var hiddenBodyElements = {}
-
+var audioPlayed = true;
 
 
 
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startPage() {
+    console.log("starting")
     addJumpscareToLinks();
     showAlert();
     spawnBalls();
@@ -28,12 +31,16 @@ function startPage() {
 
 function checkInteraction() {
     const audio = document.getElementById("main_song");
-    var errorFound = false;
+    
+    // Promise.reject(audio.play())
+    // .then(startPage, foo)
     audio.play()
-        .catch(error => {
-            errorFound = true;
-            displayEntryDiv();
-        });
+    .catch(error => {
+        displayEntryDiv();
+        return Promise.reject();
+    }).then(
+        startPage,
+    )
 }
 
 function hideBodyElements() {
