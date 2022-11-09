@@ -11,18 +11,67 @@ var messages = [
     "Puff is not an eldritch deity ",
     "Puff and cthulu are definitely not friends",
 ]
-
+var hiddenBodyElements = {}
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.style.backgroundSize = "contain";
-    document.body.style.backgroundRepeat = "no-repeat";
+    checkInteraction();
+});
+
+function startPage() {
     addJumpscareToLinks();
     showAlert();
     spawnBalls();
-});
+}
+
+function checkInteraction() {
+    const audio = document.getElementById("main_song");
+    var errorFound = false;
+    audio.play()
+        .catch(error => {
+            errorFound = true;
+            displayEntryDiv();
+        });
+}
+
+function hideBodyElements() {
+    hiddenBodyElements = {}
+    var elements = document.body.children;
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].tagName == "SCRIPT") {
+            continue;
+        }
+        hiddenBodyElements[elements[i].id] = window.getComputedStyle(elements[i]).display;
+        elements[i].style.display = "none";
+    }
+}
+
+function showBodyElements() {
+    for (var elementId in hiddenBodyElements) {
+        var element = document.getElementById(elementId);
+        element.style.display = hiddenBodyElements[elementId];
+    }
+}
+
+function displayEntryDiv() {
+    hideBodyElements();
+    var newAlert = document.createElement('div');
+    newAlert.classList.add("alert");
+    newAlert.innerHTML = "Enter Page"
+    newAlert.style.top = "calc(50% - 50px)";
+    newAlert.style.left = "calc(50% - 100px)";
+    newAlert.addEventListener("click", function() {
+        this.remove();
+        showBodyElements();
+        startPage();
+        document.getElementById("main_song").play();
+    });
+    document.body.appendChild(newAlert);
+}
+
+
 
 function addJumpscareToLinks() {
     var elements = document.getElementsByTagName('a');
@@ -31,19 +80,16 @@ function addJumpscareToLinks() {
     }
 }
 
-
 async function showJumpscare() {
     const main = document.getElementsByTagName("main")[0];
     const nav = document.getElementsByTagName("nav")[0];
-    main.style.display = 'none';
-    nav.style.display = 'none';
+    hideBodyElements();
     document.body.style.backgroundColor = "black";
     
     document.body.style.backgroundImage = "url('images/jump_scare.gif')";
 
     await new Promise(r => setTimeout(r, 1000));
-    main.style.display = 'block';
-    nav.style.display = 'flex';
+    showBodyElements();
     document.body.style.backgroundColor = "#ff70ed";
     document.body.style.backgroundImage = "";
 }
