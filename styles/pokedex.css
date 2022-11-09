@@ -1,3 +1,16 @@
+
+html {
+    height: 100%;
+    overflow-y:scroll;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+* {
+    font-family: 'Pokemon Solid', sans-serif;
+}
 #pokedex_main {
     margin: 10px 0 0 0;
 }
@@ -7,6 +20,28 @@
     justify-content: center;
     width: 100%;
     font-family: 'Pokemon Solid', sans-serif;
+}
+
+#pokedex_number_list_title {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#pokedex_number_list {
+    width: 150px;
+    position: absolute;
+    left: 0px;
+    color: #fd43e6;
+    border-style: ridge;
+    border-color: #e4000f;
+    box-shadow: 2px 1px 1px 1px #e4000f;
+    margin: 0px 0px 0px 10px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    background-color: #FFCB05;
+    text-align: center;
+    border-spacing: 10px 0px;
+    line-height: 100%;
 }
 
 #general_pokedex_info_table {

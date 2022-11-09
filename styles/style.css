@@ -3,7 +3,8 @@ html {
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-image: url("../images/pokeballs_falling.gif");
+    /* TODO: fix */
+    /* background-image: url("../images/pokeballs_falling.gif"); */
     color: #FFCB05;
 }
 
@@ -74,7 +75,8 @@ nav {
     /* animation-duration: 3s, 0.25s;
     animation-name: falling, invert;
     animation-timing-function: linear; */
-    animation: falling 3s linear, invert 0.5s linear infinite, rotation 0.5s linear infinite;
+    animation: falling 1.5s linear, invert 0.5s linear infinite, rotation 0.5s linear infinite;
+    position: absolute;
 }
 
 .home_collage_image {

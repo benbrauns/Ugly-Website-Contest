@@ -1,4 +1,10 @@
+
+var maxBalls = 50;
+var balls = [];
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    balls = [];
     document.body.style.backgroundSize = "contain";
     document.body.style.backgroundRepeat = "no-repeat";
     addJumpscareToLinks();
@@ -6,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //addFlashImagesToNavBar();
 });
 
-var maxBalls = 1000;
-const balls = [];
 
 function addFlashImagesToNavBar() {
     const imageHolders = document.getElementsByClassName("navbar_image_holder");
@@ -56,11 +60,10 @@ function spawnBall() {
     var img = document.createElement('img');
     img.src = "images/pokeball.png";
     img.style.width = "50px";
-    img.style.position = "absolute";
-    img.style.top = "-100px";
     img.style.left = getRandomX().toString() + "px";
     document.body.appendChild(img);
     img.classList.add("falling");
+    
     img.addEventListener('animationend', deleteBall);
     balls.push(img);
 }
@@ -71,7 +74,6 @@ async function spawnBalls() {
         await new Promise(r => setTimeout(r, 100));
     }
 }
-
 
 function deleteBall() {
     balls.pop(this);
