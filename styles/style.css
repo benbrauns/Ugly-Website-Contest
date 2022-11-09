@@ -73,7 +73,7 @@ nav {
 
 .falling {
     animation: falling 3s linear, invert 0.5s linear infinite, rotation 0.5s linear infinite;
-    position: absolute;
+    position: fixed;
 }
 
 .home_collage_image {
@@ -141,6 +141,21 @@ nav {
     animation-duration: 0.75s, 1.25s;
     animation-name: rotation, invert;
     animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        left: initial;
+    }
+    33% {
+        left: calc(intial + 20px);
+    }
+    66% {
+        left: calc(initial - 20px);
+    }
+    100% {
+        left: initial;
+    }
 }
 
 @keyframes falling {
