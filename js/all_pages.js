@@ -17,20 +17,12 @@ var messages = [
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    unmuteSong();
     document.body.style.backgroundSize = "contain";
     document.body.style.backgroundRepeat = "no-repeat";
     addJumpscareToLinks();
     showAlert();
     spawnBalls();
 });
-
-function unmuteSong() {
-    var audio = document.getElementById("main_song");
-    audio.muted = false;
-    audio.play();
-}
-
 
 function addJumpscareToLinks() {
     var elements = document.getElementsByTagName('a');
