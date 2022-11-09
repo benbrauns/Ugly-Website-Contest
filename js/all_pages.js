@@ -1,34 +1,34 @@
 
 var maxBalls = 50;
 var balls = [];
+var messages = [
+    "Hi",
+    "I love you",
+    "May puff be with you",
+    "Oooo look at how the puff jiggles",
+    "These hugs are so nice",
+    "I dream about your downfall",
+    "Puff is not an eldritch deity ",
+    "Puff and cthulu are definitely not friends",
+]
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    balls = [];
+    unmuteSong();
     document.body.style.backgroundSize = "contain";
     document.body.style.backgroundRepeat = "no-repeat";
     addJumpscareToLinks();
+    showAlert();
     spawnBalls();
-    //addFlashImagesToNavBar();
 });
 
-
-function addFlashImagesToNavBar() {
-    const imageHolders = document.getElementsByClassName("navbar_image_holder");
-    for(var i = 0, len = imageHolders.length; i < len; i++) {
-        const images = imageHolders[i].children;
-        for (var j = 0, ilen = images.length; j < ilen; j++) {
-            images[j].addEventListener('animationiteration', flashImage);
-        }
-    }
-}
-
-function flashImage() {
-    if (this.style.filter == "invert(1)") {
-        this.style.filter = "invert(0)";
-    } else {
-        this.style.filter = "invert(1)";
-    }
+function unmuteSong() {
+    var audio = document.getElementById("main_song");
+    audio.muted = false;
+    audio.play();
 }
 
 
@@ -86,3 +86,42 @@ function getRandomX() {
     return Math.round(Math.random() * currentWidth);
 }
 
+function getRandomY() {
+    var currentHeight = parseInt(document.body.clientHeight, 10);
+    return Math.round(Math.random() * currentHeight);
+}
+
+function getAlertDelay() {
+    return Math.round(Math.random() * 30_000) + 10_000;
+    //return Math.round(Math.random() * 1_000) + 1_000;
+}
+
+async function showAlert() {
+    await new Promise(r => setTimeout(r, getAlertDelay()));
+    var message = messages[Math.floor(Math.random() * messages.length)];
+    createAlert(message);
+    //alert(message);
+    
+    showAlert();
+}
+
+function createAlert(message) {
+    var newAlert = document.createElement('div');
+    newAlert.classList.add("alert");
+    newAlert.innerHTML = message
+    newAlert.style.top = (getRandomY() - 100) + "px";
+    newAlert.style.left = getRandomX() + "px";
+    createAlertAudio(newAlert);
+    newAlert.addEventListener("click", function() {
+        this.remove();
+    });
+    document.body.appendChild(newAlert);
+}
+
+function createAlertAudio(newAlert) {
+    var audio = document.createElement('audio');
+    audio.autoplay = true;
+    audio.type = "audio/mpeg";
+    audio.src = "../audio/jiggly_taunt_smash.mp3";
+    newAlert.appendChild(audio);
+}
