@@ -1,5 +1,5 @@
 
-var maxBalls = 1000;
+var maxBalls = 50;
 var balls = [];
 
 
