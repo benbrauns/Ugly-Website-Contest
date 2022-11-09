@@ -1,5 +1,5 @@
 
-var maxBalls = 50;
+var maxBalls = 1000;
 var balls = [];
 var messages = [
     "Hi",
@@ -11,7 +11,10 @@ var messages = [
     "Puff is not an eldritch deity ",
     "Puff and cthulu are definitely not friends",
     "I see you",
-    ""
+    "",
+    "Watch out",
+    "look behind you",
+    "You have very nice femurs",
 ]
 var hiddenBodyElements = {}
 var audioPlayed = true;
@@ -137,7 +140,7 @@ function getRandomY() {
 }
 
 function getAlertDelay() {
-    return Math.round(Math.random() * 30_000) + 10_000;
+    return Math.round(Math.random() * 5_000) + 5_000;
     //return Math.round(Math.random() * 1_000) + 1_000;
 }
 
