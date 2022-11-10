@@ -1,0 +1,35 @@
+body {
+    grid-template-columns: 0fr 1fr 0fr;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "gif"
+}
+
+#home_top_gif {
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - 250px);
+    max-height: calc(100vh - 250px);
+    grid-area: gif;
+}
+
+#home-singing-spacer-bar {
+    grid-area: singers;
+}
+
+
+@media only screen and (max-width: 450px) {
+    #home_top_gif {
+        height: calc(100vh - 100px);
+        max-height: calc(100vh - 100px);
+        grid-area: gif;
+    }
+}

@@ -5,9 +5,10 @@ html {
     overflow-y:scroll;
 }
 
-* {
-    font-family: 'Pokemon Solid', sans-serif;
+body {
+    row-gap: 10px;
 }
+
 #pokedex_main {
     display: block;
     margin: 0 0 0 0;
@@ -30,6 +31,8 @@ html {
     background-color: #FFCB05;
     text-align: center;
     border-spacing: 10px 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #pokedex_number_list_title {

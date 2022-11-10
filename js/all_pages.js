@@ -15,6 +15,15 @@ var messages = [
     "Watch out",
     "look behind you",
     "You have very nice femurs",
+    "You smell different when you are asleep",
+    "Jigglypuff is the balloon pokemon!",
+    "Jigglypuff evolves into Wigglytuff when it has enough happiness and exposed to a moon stone",
+    "Jigglypuff can use it's eyes to hypnotize people and other pokemon",
+    "Jigglypuff Became A Fairy-Type In Generation 6",
+    "75 Percent Of Jigglypuffs Are Female",
+    "Jigglypuff Prefers To Live In Meadow-Like Locations",
+    "Jigglypuff Has Green Eyes In Its Shiny Form",
+    "None Of Jigglypuff's Evolutionary Line Evolve By Leveling Up",
 ]
 var hiddenBodyElements = {}
 var audioPlayed = true;
