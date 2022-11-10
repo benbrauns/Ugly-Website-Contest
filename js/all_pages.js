@@ -163,9 +163,9 @@ function getRandomJumpscareDelay() {
 function spawnBall() {
     var img = document.createElement('img');
     img.src = "images/pokeball.png";
-    img.style.width = "50px";
     img.style.top = getRandomY().toString() + "px";
     img.style.left = getRandomX().toString() + "px";
+    img.classList.add("pokeball")
     document.body.appendChild(img);
     if (lastBallDirection == "right") {
         img.classList.add("falling_up");

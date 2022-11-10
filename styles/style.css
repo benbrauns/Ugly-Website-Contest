@@ -189,6 +189,10 @@ nav {
     border-radius: 15px;
 }
 
+.pokeball {
+    width: 50px;
+}
+
 .falling {
     animation: falling 3s linear, invert 0.5s linear infinite, pokeball_wiggle_spin 1s linear infinite;
     position: fixed;
@@ -417,6 +421,11 @@ nav {
 }
 
 @media only screen and (max-width: 450px) {
+    .pokeball {
+        width: 30px;
+        height: auto;
+    }
+
     #footer {
         font-size: .45rem;
         line-height: 100%;
