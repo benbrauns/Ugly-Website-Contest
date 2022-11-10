@@ -1,5 +1,6 @@
 
-var maxBalls = 1000;
+var maxBalls = 200;
+var maxSpawners = 10;
 var balls = [];
 var messages = [
     "Hi",
@@ -39,7 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function startPage() {
     addJumpscareToLinks();
     showAlert();
-    spawnBalls();
+    spawnSpawners();
+}
+
+function spawnSpawners() {
+    for (var i = 0; i < maxSpawners; i++) {
+        spawnBalls();
+    }
 }
 
 function checkInteraction() {
