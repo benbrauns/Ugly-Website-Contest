@@ -27,10 +27,12 @@ var messages = [
 ]
 var hiddenBodyElements = {}
 var audioPlayed = true;
-
+var lastBallDirection = "right";
+var newLink = "";
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("jumpscare-audio").load();
     checkInteraction();
 });
 
@@ -66,6 +68,9 @@ function hideBodyElements() {
 
 function showBodyElements() {
     for (var elementId in hiddenBodyElements) {
+        if (elementId == "") {
+            continue;
+        }
         var element = document.getElementById(elementId);
         element.style.display = hiddenBodyElements[elementId];
     }
@@ -92,31 +97,84 @@ function displayEntryDiv() {
 function addJumpscareToLinks() {
     var elements = document.getElementsByTagName('a');
     for(var i = 0, len = elements.length; i < len; i++) {
-        elements[i].onclick = showJumpscare
+        elements[i].onclick = (function (e) {
+            e.preventDefault();
+            newLink = e.target.href;
+            showJumpscare();
+        });
     }
 }
 
-async function showJumpscare() {
+function showJumpscare() {
     const main = document.getElementsByTagName("main")[0];
     const nav = document.getElementsByTagName("nav")[0];
-    hideBodyElements();
-    document.body.style.backgroundColor = "black";
+    var delay = getRandomJumpscareDelay();
     
-    document.body.style.backgroundImage = "url('images/jump_scare.gif')";
-
-    await new Promise(r => setTimeout(r, 1000));
-    showBodyElements();
-    document.body.style.backgroundColor = "#ff70ed";
-    document.body.style.backgroundImage = "";
+    if (delay > 0) {
+        console.log(delay)
+        hideBodyElements();
+        document.body.style.backgroundColor = "black";
+        
+        document.body.style.backgroundImage = "url('images/jump_scare.gif')";
+        var audio = document.getElementById("jumpscare-audio");
+        audio.addEventListener('playing', (event) => {
+            wait(delay, 1).then(function() {
+                return goToNewLink(newLink);
+            });
+        });
+        audio.play();        
+    } else {
+        goToNewLink(newLink);
+    }
 }
+
+
+
+function wait(ms, val) {
+    return new Promise(resolve => setTimeout(resolve, ms, val))
+}
+
+function goToNewLink() {
+    if (window.location.href == newLink) {
+        document.body.style.backgroundImage = "url('images/pokeballs_falling.gif')";
+        showBodyElements();
+        window.location.reload();
+    } else {
+        window.location.href = newLink;
+    }
+}
+
+
+function getRandomJumpscareDelay() {
+    if (Math.random() > 0.97) {
+        return 500;
+    } else {
+        return 0;
+    }
+}
+
 
 function spawnBall() {
     var img = document.createElement('img');
     img.src = "images/pokeball.png";
     img.style.width = "50px";
+    img.style.top = getRandomY().toString() + "px";
     img.style.left = getRandomX().toString() + "px";
     document.body.appendChild(img);
-    img.classList.add("falling");
+    if (lastBallDirection == "right") {
+        img.classList.add("falling_up");
+        lastBallDirection = "up";
+    } else if (lastBallDirection == "up") {
+        img.classList.add("falling");
+        lastBallDirection = "down";
+    } else if (lastBallDirection == "down") {
+        img.classList.add("crossing_left");
+        lastBallDirection = "left";
+    } else {
+        img.classList.add("crossing");
+        lastBallDirection = "right";
+    }
+    
     
     img.addEventListener('animationend', deleteBall);
     balls.push(img);

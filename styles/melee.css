@@ -1,0 +1,62 @@
+body {
+    grid-template-columns: 200px 1fr 0px;
+    row-gap: 10px;
+    column-gap: 25px;
+}
+
+#melee-main {
+    grid-area: main;
+}
+
+#sidebar {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin-left: 10px;
+}
+
+#melee-history {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+    line-height: 200%;
+}
+
+.melee-player {
+    border-top: solid;
+    width: 80%;
+    font-size: 1rem;
+    line-height: 75%;
+}
+
+.top-player-rank {
+    margin-top: 10px;
+}
+
+.top-player-picture {
+    border-style: solid;
+    border-radius: 15px;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        grid-template-columns: 101px 1fr 0px;
+        column-gap: 10px;
+    }
+
+    #sidebar {
+        max-width: 75px;
+    }
+
+    .section-title2 {
+        font-size: 1rem;
+    }
+
+    .melee-player {
+        font-size: 0.8rem;
+    }
+}

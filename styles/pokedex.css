@@ -1,12 +1,14 @@
 
 html {
-    height: 100%;
-    max-width: 100%;
-    overflow-y:scroll;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 body {
     row-gap: 10px;
+    max-width: 100vw;
 }
 
 #pokedex_main {

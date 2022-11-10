@@ -5,42 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <link href="http://fonts.cdnfonts.com/css/pokemon-hollow" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link rel="stylesheet" href="styles/melee.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-hollow" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <title>Melee</title>
 </head>
 <body>
     <script type="text/javascript" src="js/all_pages.js"></script> 
     <nav id="navbar">
-        <audio id="main_song" autoplay src="audio/jigglypuff_song.mp3" type="audio/mpeg"></audio>
-        <div id="navbar_outer">
-            <div id="navbar_left_image_holder" class="navbar_image_holder">
-                <div id="pokeball_bounce_navbar_image"></div>
-                <div id="glasses_puff_navbar_image"></div>
-                <div id="pokeball_bounce_navbar_image"></div>
-                <div id="glasses_puff_navbar_image"></div>
+        <audio preload="auto" autoplay loop id="main_song" src="audio/jigglypuff_song.mp3" type="audio/mpeg"></audio>
+        <audio preload="auto" id="jumpscare-audio" src="audio/jumpscare.mp3" type="audio/mpeg"></audio>
+
+        <div id="navbar_left_image_holder" class="navbar_image_holder">
+            <div id="pokeball_bounce_navbar_image"></div>
+            <div id="glasses_puff_navbar_image"></div>
+            <div id="pokeball_bounce_navbar_image"></div>
+            <div id="glasses_puff_navbar_image"></div>
+        </div>
+        <div id="navbar_links_holder">
+            <div class="nav_button_holder">
+                <a class="nav_button" href="index.html">Home</a>
             </div>
-            <div id="navbar_links_holder">
-                <div class="nav_button_holder">
-                    <a class="nav_button" href="index.html">Home</a>
-                </div>
-                <div class="nav_button_holder">
-                    <a class="nav_button" href="pokedex.html">Pokedex</a>
-                </div>
-                <div class="nav_button_holder">
-                    <a class="nav_button" href="melee.html">Melee</a>
-                </div>
-                <div class="nav_button_holder">
-                    <a class="nav_button" href="anime.html">Anime</a>
-                </div>
+            <div class="nav_button_holder">
+                <a class="nav_button" href="pokedex.html">Pokedex</a>
             </div>
-            <div id="navbar_right_image_holder" class="navbar_image_holder">
-                <div id="glasses_puff_navbar_image"></div>
-                <div id="pokeball_bounce_navbar_image"></div>
-                <div id="glasses_puff_navbar_image"></div>
-                <div id="pokeball_bounce_navbar_image"></div>
+            <div class="nav_button_holder">
+                <a class="nav_button" href="melee.html">Melee</a>
             </div>
         </div>
+        <div id="navbar_right_image_holder" class="navbar_image_holder">
+            <div id="glasses_puff_navbar_image"></div>
+            <div id="pokeball_bounce_navbar_image"></div>
+            <div id="glasses_puff_navbar_image"></div>
+            <div id="pokeball_bounce_navbar_image"></div>
+        </div>
+        
     </nav>
+    <section id="sidebar" class="display-section">
+        <h2 class="section-title2">Top Players</h2>
+        <div class="melee-player">
+            <p class="top-player-rank">Standing 1</p>
+            <p class="top-player-name">HungryBox</p>
+            <img class="top-player-picture" src="https://ssb.wiki.gallery/images/3/3e/Hungrybox_and_GOML_2020.png"/>
+        </div>
+        <div class="melee-player">
+            <p class="top-player-rank">Standing 37</p>
+            <p class="top-player-name">2saint</p>
+            <img class="top-player-picture" src="images/2saint.jpg"/>
+        </div>
+        <div class="melee-player">
+            <p class="top-player-rank">Standing 281</p>
+            <p class="top-player-name">Michael</p>
+            <img class="top-player-picture" src="images/Michael.jpeg"/>
+        </div>
+    </section>
+    <main id="melee-main" class="display-section">
+        <h2 class="section-title2">Jigglypuff in Super Smash-Bros Melee</h2>
+        <p id="melee-history">Since the beginning of the Melee metagame, Jigglypuff has had among the biggest improvements, going from an average contender to one of the definitive characters in the competitive scene. In the first tier list (October 2002), Jigglypuff was ranked 17-18th place (tied with Ness). This was due to most players not fully recognizing its aerial capabilities. With new metagame developments, it jumped to 10-11th in the second tier list (December 2002). Jigglypuff hovered around the 8th-11th spots before rising to 6th-7th place (tied with Captain Falcon) in the ninth tier list (October 2008), largely due to Mango showing how dominant Jigglypuff was in the air, and how powerful its pressure game and combo abilities were. With Mango continuously dominating more Melee tournaments using Jigglypuff, and the rise of another nationally dominant Jigglypuff player in Hungrybox, Jigglypuff jumped up to top tier in the original 10th tier list (September 2010), tied with Fox and Falco for the top position. In the tenth tier list (December 2010), Jigglypuff was ranked third under Fox and Falco. Jigglypuff is ranked 5th place in the twelfth tier list. Despite this, Jigglypuff has a smaller playerbase than the rest of the top tier characters, with only four representatives on the 2015 SSBM Player Rankings, although it has since seen an increase in representation.
+
+        Since 2015, Jigglypuff's presence in the Melee metagame has continued to grow, largely to Hungrybox's continued rise to dominance as the best player in the world. After winning huge events such as EVO 2016, and achieving Rank #1 on SSBMRank from 2017 to 2019, Hungrybox became the player to beat at every Melee tournament, and many players began developing a secondary Fox in an attempt to counterpick him. Following Hungrybox's dominance, most players began to recognize Jigglypuff as a top three character, with some believing that it is the best character in the game; this has been reflected in the thirteenth and latest tier list, where Jigglypuff is ranked 3rd.</p>
+    </main>
+
+    <section id="footer">
+        <img id="manifesto-pokeball-l" class="pokeball_idle_image" src="images/pokeball_idle.gif">
+        <p id="home_manifesto_text" class="text_block">
+            Here we celebrate our great and glorious leader jigglypuff. Their glorious presence emboldens us. We relish in the gift it is to merely exist within the same reality as our divine savior. We are the jiggles and the puffs 
+        </p>
+        <img id="manifesto-pokeball-r" class="pokeball_idle_image" src="images/pokeball_idle.gif">
+    </section>
 </body>
 </html>

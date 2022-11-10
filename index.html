@@ -15,7 +15,8 @@
     <script type="text/javascript" src="js/home.js"></script>
     <nav id="navbar">
         <!-- TODO UNMUTE THIS -->
-        <audio autoplay loop id="main_song" src="audio/jigglypuff_song.mp3" type="audio/mpeg"></audio>
+        <audio preload="auto" autoplay loop id="main_song" src="audio/jigglypuff_song.mp3" type="audio/mpeg"></audio>
+        <audio preload="auto" id="jumpscare-audio" src="audio/jumpscare.mp3" type="audio/mpeg"></audio>
         
         <div id="navbar_left_image_holder" class="navbar_image_holder">
             <div id="pokeball_bounce_navbar_image"></div>
@@ -32,9 +33,6 @@
             </div>
             <div class="nav_button_holder">
                 <a class="nav_button" href="melee.html">Melee</a>
-            </div>
-            <div class="nav_button_holder">
-                <a class="nav_button" href="anime.html">Anime</a>
             </div>
         </div>
         <div id="navbar_right_image_holder" class="navbar_image_holder">
