@@ -10,13 +10,45 @@ html {
 
 body {
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 200px 1fr 100px;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main ad"
+        "footer footer footer";
     margin: 0px 0px 0px 0px;
+}
+
+#navbar {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "nav-left-image-holder links nav-right-image-holder";
+    align-items: center;
+    justify-items: center;
+}
+
+.navbar_image_holder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#navbar_left_image_holder {
+    grid-area: nav-left-image-holder;
+    justify-content: end;
+}
+
+#navbar_right_image_holder {
+    grid-area: nav-right-image-holder;
 }
 
 main {
     min-height: 100%;
+    grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +60,7 @@ nav {
     text-shadow: 2px 2px #e4000f;
     background-color: #ff70ed;
     min-width: 100%;
-    width: 100%;
+    
     height: 50px;
     padding: 5px 5px 20px 5px;
 }
@@ -129,11 +161,6 @@ nav {
     display: flex;
     align-items: stretch;
     height: 100px;
-}
-
-.navbar_image_holder {
-    display: flex;
-    width: 100%;
 }
 
 
@@ -259,13 +286,7 @@ nav {
 #home_manifesto_text {
     width: 50%;
 }
-#navbar_left_image_holder {
-    justify-content: end;
-}
 
-#navbar_right_image_holder {
-    justify-content: start;
-}
 
 #home_top_gif {
     width: 100%;
@@ -276,12 +297,6 @@ nav {
     display: flex;
     justify-content: center;
     background-color: #ff70ed;
-}
-
-#navbar_outer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 
 #outer_manifesto_holder {

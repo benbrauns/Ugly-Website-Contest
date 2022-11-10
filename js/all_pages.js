@@ -1,5 +1,5 @@
 
-var maxBalls = 1000;
+var maxBalls = 50;
 var balls = [];
 var messages = [
     "Hi",
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startPage() {
-    console.log("starting")
     addJumpscareToLinks();
     showAlert();
     spawnBalls();
@@ -34,15 +33,13 @@ function startPage() {
 
 function checkInteraction() {
     const audio = document.getElementById("main_song");
-    
-    // Promise.reject(audio.play())
-    // .then(startPage, foo)
     audio.play()
     .catch(error => {
         displayEntryDiv();
         return Promise.reject();
     }).then(
         startPage,
+        () => {}
     )
 }
 

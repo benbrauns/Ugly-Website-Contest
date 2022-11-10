@@ -4,30 +4,20 @@ html {
     max-width: 100%;
     overflow-y:scroll;
 }
-body {
-    display: block;
-    max-width: 100%;
-    height: 100%;
-    min-height: 100%;
-}
 
 * {
     font-family: 'Pokemon Solid', sans-serif;
 }
 #pokedex_main {
     display: block;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
     padding: 0 0 0 0;
 }
 
 #general_pokedex_info {
-    margin-left: 186px;
-    margin-right: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    grid-area: main;
     width: fit-content;
     font-family: 'Pokemon Solid', sans-serif;
-
     line-height: 110%;
     display: flex;
     flex-direction: column;
@@ -48,10 +38,9 @@ body {
 }
 
 #pokedex_number_list {
+    grid-area: sidebar;
     max-width: 150px;
     width: 150px;
-    position: absolute;
-    left: 0px;
     color: #fd43e6;
     border-style: ridge;
     border-color: #e4000f;
