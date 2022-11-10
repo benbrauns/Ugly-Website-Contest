@@ -1,3 +1,16 @@
+nav {
+    background-image: url("../images/pokemon_stadium.png");
+    background-size: contain;
+}
+
+#navbar_links_holder {
+    background-color: transparent;
+}
+
+#footer {
+    background-image: url("../images/pokemon_stadium.png");
+    background-size: contain;
+}
 body {
     grid-template-columns: 200px 1fr 0px;
     row-gap: 10px;
@@ -5,7 +18,15 @@ body {
 }
 
 #melee-main {
+    
+    max-width: 1200;
     grid-area: main;
+    background-image: url("../images/melee.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #sidebar {
@@ -17,11 +38,17 @@ body {
     margin-left: 10px;
 }
 
+#top-players-title {
+    margin-top: 150px;
+}
+
 #melee-history {
+    
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 1rem;
-    line-height: 200%;
+    font-size: 2rem;
+    line-height: 100%;
+    
 }
 
 .melee-player {
@@ -42,7 +69,25 @@ body {
     margin-bottom: 10px;
 }
 
+#back_air {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    top: 125px;
+    left: -10px;
+}
+
 @media only screen and (max-width: 450px) {
+    #top-players-title {
+        margin-top: 60px;
+    }
+    #back_air {
+        width: 75px;
+        top: 75px;
+        left: 5px;
+    }
+
     body {
         grid-template-columns: 101px 1fr 0px;
         column-gap: 10px;
@@ -58,5 +103,9 @@ body {
 
     .melee-player {
         font-size: 0.8rem;
+    }
+
+    #melee-main {
+        width: calc(100% - 10px);
     }
 }

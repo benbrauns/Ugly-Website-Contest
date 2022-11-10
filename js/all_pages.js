@@ -32,7 +32,7 @@ var newLink = "";
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("jumpscare-audio").load();
-    checkInteraction();
+    //checkInteraction();
 });
 
 function startPage() {

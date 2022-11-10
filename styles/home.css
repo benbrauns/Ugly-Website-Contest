@@ -2,6 +2,18 @@ body {
     grid-template-columns: 0fr 1fr 0fr;
 }
 
+nav {
+    background-image: url("../images/singing_puff.gif");
+    background-size: contain;
+}
+
+#footer {
+    background-color: transparent;
+    background-image: url("../images/angry_puff_pic.png");
+    background-size: contain;
+}
+
+
 main {
     grid-area: main;
     display: grid;

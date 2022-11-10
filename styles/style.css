@@ -7,6 +7,8 @@ html {
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
     overflow-x: hidden;
     /* TODO: fix */
     background-image: url("../images/pokeballs_falling.gif");
@@ -90,7 +92,7 @@ nav {
 #navbar_links_holder {
     display: flex;
     justify-content: center;
-    background-color: #ff70ed;
+    background-color: transparent;
 }
 
 .nav_button_holder {
