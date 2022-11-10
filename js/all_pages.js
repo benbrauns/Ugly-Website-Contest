@@ -1,7 +1,3 @@
-
-var maxBalls = 200;
-var maxSpawners = 10;
-var balls = [];
 var messages = [
     "Hi",
     "I love you",
@@ -25,6 +21,8 @@ var messages = [
     "Jigglypuff Prefers To Live In Meadow-Like Locations",
     "Jigglypuff Has Green Eyes In Its Shiny Form",
     "None Of Jigglypuff's Evolutionary Line Evolve By Leveling Up",
+    "My mom says I'm special",
+    "I used to live in this little hippie town in ohio"
 ]
 var hiddenBodyElements = {}
 var audioPlayed = true;
@@ -40,12 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function startPage() {
     addJumpscareToLinks();
     showAlert();
-    spawnSpawners();
+    //spawner amount, per spawner ball amount, delay between spawn
+    spawnSpawners(10, 22, 100);
 }
 
-function spawnSpawners() {
-    for (var i = 0; i < maxSpawners; i++) {
-        spawnBalls();
+function spawnSpawners(spawnerAmount, ballAmount, delayInMS) {
+    for (var i = 0; i < spawnerAmount; i++) {
+        spawnBalls(ballAmount, delayInMS);
     }
 }
 
@@ -181,21 +180,17 @@ function spawnBall() {
         img.classList.add("crossing");
         lastBallDirection = "right";
     }
-    
-    
     img.addEventListener('animationend', deleteBall);
-    balls.push(img);
 }
 
-async function spawnBalls() {
-    while (balls.length < maxBalls) {
+async function spawnBalls(max, delay) {
+    for (var i = 0; i < max; i++) {
         spawnBall();
-        await new Promise(r => setTimeout(r, 100));
+        await new Promise(r => setTimeout(r, delay));
     }
 }
 
 function deleteBall() {
-    balls.pop(this);
     this.remove();
     spawnBall();
 }
