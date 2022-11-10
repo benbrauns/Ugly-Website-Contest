@@ -166,7 +166,7 @@ function goToNewLink() {
 
 
 function getRandomJumpscareDelay() {
-    if (Math.random() > 0.1) {
+    if (Math.random() > 0.97) {
         return 500;
     } else {
         return 0;
