@@ -31,7 +31,7 @@ var audioPlayed = true;
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    //checkInteraction();
+    checkInteraction();
 });
 
 function startPage() {
