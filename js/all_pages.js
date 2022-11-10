@@ -98,6 +98,19 @@ function displayEntryDiv() {
     document.body.appendChild(newAlert);
 }
 
+
+
+function addJumpscareToLinks() {
+    var elements = document.getElementsByTagName('a');
+    for(var i = 0, len = elements.length; i < len; i++) {
+        elements[i].onclick = (function (e) {
+            e.preventDefault();
+            newLink = e.target.href;
+            showJumpscare();
+        });
+    }
+}
+
 function showJumpscare() {
     const main = document.getElementsByTagName("main")[0];
     const nav = document.getElementsByTagName("nav")[0];
@@ -134,11 +147,8 @@ function spawnKill() {
 }
 
 async function kill() {
-    console.log("killing");
-    kill();
-    var a =""
-    while (true) {
-        a += "a";
+    for (var i = 5; i > 3; i = i + 1) { 
+        console.log(i);
     }
 }
 
@@ -155,7 +165,7 @@ function goToNewLink() {
 
 
 function getRandomJumpscareDelay() {
-    if (Math.random() > 0.97) {
+    if (Math.random() > 0.1) {
         return 500;
     } else {
         return 0;
