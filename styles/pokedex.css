@@ -17,7 +17,7 @@ body {
 
 #general_pokedex_info {
     grid-area: main;
-    width: fit-content;
+    width: 100%;
     font-family: 'Pokemon Solid', sans-serif;
     line-height: 110%;
     display: flex;
@@ -57,6 +57,13 @@ body {
     line-height: 100%;
 }
 
+#general_pokedex_info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #general_pokedex_info_table {
     display: flex;
     flex-direction: row;
@@ -65,15 +72,11 @@ body {
 }
 
 #pokedex_table_picture {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 10px;
-    width: 497px;
-    height: 331px;
-    background-image: url("../images/anime_singing_puff.gif");
-    background-repeat: no-repeat;
-    background-size:fill;
-    background-position: center;
+    width: calc(100%-20px);
+    height: auto;
     border-style: ridge;
     border-radius: 10%;
     border-color: #e4000f;
@@ -102,4 +105,23 @@ body {
     background-repeat: no-repeat;
     background-size: 115%;
     background-position: bottom -2px right -5px;
+}
+@media only screen and (max-width: 450px) {
+    body {
+        grid-template-columns: 101px 1fr 0px;
+        column-gap: 10px;
+    }
+    #pokedex_number_list {
+        max-width: 75px;
+        font-size: 0.8rem;
+    }
+    #pokedex_table_picture {
+        width: 90%;
+    }
+
+    #general_pokedex_info {
+        width: 100%;
+    }
+
+
 }
