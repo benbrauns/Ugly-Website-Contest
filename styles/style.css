@@ -4,6 +4,7 @@
 }
 
 html {
+    animation: main-background 1s linear infinite;
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
@@ -51,6 +52,7 @@ body {
 }
 
 #navbar {
+    animation: blinker 0.5s linear infinite, invert 1.5s linear infinite;
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 460px 1fr;
@@ -136,6 +138,7 @@ nav {
 
 
 #footer {
+    animation: blinker 0.5s linear infinite, invert 1.5s linear infinite;
     font-size: .9rem;
     width: 100vw;
     min-height: 100%;
@@ -271,6 +274,43 @@ nav {
     animation-duration: 0.75s, 1.25s;
     animation-name: rotation, invert;
     animation-iteration-count: infinite;
+}
+
+@keyframes top-player-color-animation {
+    0% {
+        background-color: #FFCB05;
+    }
+    50% {
+        background-color: #0034fa;
+    }
+    100% {
+        background-color: #FFCB05;
+    }
+}
+
+@keyframes main-background {
+    0% {
+        filter: sepia(0);
+    }
+    50% {
+        filter: sepia(1);
+    }
+    100% {
+        filter: sepia(0);
+    }
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+
 }
 
 @keyframes vertical_pokeball_wiggle_spin {

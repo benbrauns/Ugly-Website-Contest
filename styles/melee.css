@@ -30,6 +30,7 @@ body {
 }
 
 #sidebar {
+    animation: top-player-color-animation 1s linear infinite;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -77,6 +78,8 @@ body {
     top: 125px;
     left: -10px;
 }
+
+
 
 @media only screen and (max-width: 450px) {
     #top-players-title {

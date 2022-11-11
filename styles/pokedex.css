@@ -44,6 +44,7 @@ body {
 }
 
 #pokedex_number_list {
+    animation: top-player-color-animation 1s linear infinite;
     grid-area: sidebar;
     max-width: 150px;
     width: 150px;
@@ -61,6 +62,7 @@ body {
 }
 
 #general_pokedex_info {
+    animation: top-player-color-animation 1s linear infinite;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -113,6 +115,9 @@ body {
     background-size: 115%;
     background-position: bottom -2px right -5px;
 }
+
+
+
 @media only screen and (max-width: 450px) {
     body {
         grid-template-columns: 101px 1fr 0px;
