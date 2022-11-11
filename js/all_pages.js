@@ -28,12 +28,46 @@ var hiddenBodyElements = {}
 var audioPlayed = true;
 var lastBallDirection = "right";
 var newLink = "";
+var flashOn = true;
 
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("jumpscare-audio").load();
+    document.addEventListener('keydown', toggleFlash)
     checkInteraction();
 });
+
+function toggleFlash() {
+    if (flashOn) {
+        document.documentElement.style.animation = "none";
+        document.getElementById("navbar").style.animation = "none";
+        document.getElementById("footer").style.animation = "none";
+        if (document.getElementById("general_pokedex_info")) {
+            document.getElementById("general_pokedex_info").style.animation = "none";
+        }
+        if (document.getElementById("pokedex_number_list")) {
+            document.getElementById("pokedex_number_list").style.animation = "none";
+        }
+        if (document.getElementById("sidebar")) {
+            document.getElementById("sidebar").style.animation = "none";
+        }
+        flashOn = false;
+    } else {
+        document.documentElement.style.animation = "main-background 1s linear infinite";
+        document.getElementById("navbar").style.animation = "blinker 0.5s linear infinite, invert 1.5s linear infinite";
+        document.getElementById("footer").style.animation = "blinker 0.5s linear infinite, invert 1.5s linear infinite";
+        if (document.getElementById("general_pokedex_info")) {
+            document.getElementById("general_pokedex_info").style.animation = "top-player-color-animation 1s linear infinite";
+        }
+        if (document.getElementById("pokedex_number_list")) {
+            document.getElementById("pokedex_number_list").style.animation = "top-player-color-animation 1s linear infinite";
+        }
+        if (document.getElementById("sidebar")) {
+            document.getElementById("sidebar").style.animation = "top-player-color-animation 1s linear infinite";
+        }
+        flashOn = true;
+    }
+}
 
 function startPage() {
     addJumpscareToLinks();
